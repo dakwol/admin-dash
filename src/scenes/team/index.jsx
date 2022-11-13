@@ -14,20 +14,20 @@ const Team = () => {
     { field: "id", headerName: "ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Имя",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Возраст",
       type: "number",
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Номер телефона",
       flex: 1,
     },
     {
@@ -37,7 +37,7 @@ const Team = () => {
     },
     {
       field: "accessLevel",
-      headerName: "Access Level",
+      headerName: "Уровень доступа",
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
@@ -51,8 +51,8 @@ const Team = () => {
               access === "admin"
                 ? colors.greenAccent[600]
                 : access === "manager"
-                ? colors.greenAccent[700]
-                : colors.greenAccent[700]
+                  ? colors.greenAccent[700]
+                  : colors.greenAccent[700]
             }
             borderRadius="4px"
           >
@@ -70,7 +70,7 @@ const Team = () => {
 
   return (
     <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
+      <Header title="Команда" subtitle="Управление членами команды" />
       <Box
         m="40px 0 0 0"
         height="75vh"

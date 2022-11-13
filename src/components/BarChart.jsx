@@ -1,15 +1,17 @@
-import { useTheme } from "@mui/material";
+import { Typography, useTheme, Box } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
+import { useState } from "react";
 
-const BarChart = ({ isDashboard = false }) => {
+const BarChart = ({ isDashboard = false, horizontal = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
     <ResponsiveBar
       data={data}
+      layout={horizontal ? 'horizontal' : 'vertical'}
       theme={{
         // added
         axis: {

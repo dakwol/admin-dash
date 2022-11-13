@@ -21,7 +21,7 @@ const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {
-    const title = prompt("Please enter a new title for your event");
+    const title = prompt("Пожалуйста введите название события");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
 
@@ -39,7 +39,7 @@ const Calendar = () => {
   const handleEventClick = (selected) => {
     if (
       window.confirm(
-        `Are you sure you want to delete the event '${selected.event.title}'`
+        `Вы уверены, что хотите удалить событие '${selected.event.title}'`
       )
     ) {
       selected.event.remove();
@@ -48,17 +48,16 @@ const Calendar = () => {
 
   return (
     <Box m="20px">
-      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
+      <Header title="Календарь" subtitle="Интерактивная страница календаря" />
 
       <Box display="flex" justifyContent="space-between">
-        {/* CALENDAR SIDEBAR */}
         <Box
           flex="1 1 20%"
           backgroundColor={colors.primary[400]}
           p="15px"
           borderRadius="4px"
         >
-          <Typography variant="h5">Events</Typography>
+          <Typography variant="h5">События</Typography>
           <List>
             {currentEvents.map((event) => (
               <ListItem
@@ -86,7 +85,6 @@ const Calendar = () => {
           </List>
         </Box>
 
-        {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
             height="75vh"
@@ -112,12 +110,12 @@ const Calendar = () => {
             initialEvents={[
               {
                 id: "12315",
-                title: "All-day event",
+                title: "Ежедневное событие",
                 date: "2022-09-14",
               },
               {
                 id: "5123",
-                title: "Timed event",
+                title: "Временное событие",
                 date: "2022-09-28",
               },
             ]}
